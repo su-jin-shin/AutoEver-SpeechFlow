@@ -1,0 +1,30 @@
+# Gradle & 빌드 관련 파일 제외
+build/
+.gradle/
+*.log
+*.jar
+*.war
+*.class
+
+# IntelliJ IDEA & PyCharm 설정 파일 제외
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# gRPC 자동 생성 파일 제외
+stt-grpc-server/build/generated/source/proto/
+stt-grpc-client/build/generated/source/proto/
+
+# Python 관련 파일 제외
+stt-flask-engine/venv/
+__pycache__/
+*.pyc
+*.pyo       
+*.pyd
+.Python
+
+# OS 및 기타 불필요한 파일 제외
+.DS_Store
+Thumbs.db

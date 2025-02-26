@@ -1,0 +1,19 @@
+server:
+  port: 8081
+  tomcat:
+    max-http-form-post-size: 10MB  # HTTP 요청 최대 크기
+    max-swallow-size: -1
+    max-http-post-size: -1  # POST 요청 크기 무제한 (-1)
+    max-websocket-message-buffer-size: 5242880  # WebSocket 최대 메시지 크기 5MB (기본 512KB(524288) > 5MB)
+
+
+solace:
+  java:
+    clientPassword: default
+    clientUsername: default
+    host: localhost:55555
+    msgVpn: CRM
+    connectRetries: 1
+    connectRetriesPerHost: 5
+    reconnectRetries: 20
+    reconnectRetryWaitInMillis: 1000

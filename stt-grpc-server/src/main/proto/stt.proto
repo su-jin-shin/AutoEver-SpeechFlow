@@ -1,0 +1,21 @@
+syntax = "proto3";
+package stt;
+option java_package = "stt";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+
+service SpeechToTextService {
+  // 클라이언트 스트리밍 방식: 음성 데이터를 스트리밍으로 전송
+  rpc StreamSpeechToText(stream SpeechChunk) returns (SpeechResponse);
+}
+
+message SpeechChunk {
+  string customer_id = 1;
+  bytes audio_data = 2; // 음성 데이터를 스트리밍으로 보냄
+}
+
+message SpeechResponse {
+  string text = 1;
+  bool success = 2;
+}
